@@ -29,4 +29,12 @@ public class GuestbookService {
 		
 	}
 	
+	public GuestbookVo exeDelete(String pw, int no) {
+		System.out.println("service.exeDelete()");
+		
+		GuestbookVo guestbookVo = guestbookDao.userDelete(pw, no);
+		
+		return guestbookVo;
+	}
+	
 }

@@ -40,4 +40,21 @@ public class GuestbookController {
 		return "redirect:/guest/list";
 	}
 	
+	@RequestMapping(value="/guest/deleteForm", method= {RequestMethod.GET, RequestMethod.POST})
+	public String deleteFrom(@RequestParam("no") int no, Model model) {
+		System.out.println("Controller.deleteForm()");
+		model.addAttribute("no", no);
+		return "/WEB-INF/views/deleteForm.jsp";
+	}
+	
+	@RequestMapping(value="/guest/delete", method= {RequestMethod.GET, RequestMethod.POST})
+	public String delete(@RequestParam("no") int no, 
+						 @RequestParam("pass") String pw) {
+		System.out.println("Controller.delete()");
+		
+		guestbookService.exeDelete(pw, no);
+		
+		return "redirect:/guest/list";
+	}
+	
 }

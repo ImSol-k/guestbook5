@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form>
+	<form action="/guestbook5/guest/delete" method="get">
 		<table>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="password" name=""></td>
+				<td>
+				<input type="hidden" name="no" value="${requestScope.no }">
+				<input type="password" name="pass"></td>
 				<td><button type="submit">삭제</button></td>
 			</tr>
 		</table>

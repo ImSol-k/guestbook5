@@ -75,7 +75,7 @@ public class GuestbookDao {
 		close();
 	}//userInsert()
 	
-	public void userDelete(String pw, int no) {
+	public GuestbookVo userDelete(String pw, int no) {
 		getConnection();
 		try {
 			String query = "";
@@ -92,6 +92,7 @@ public class GuestbookDao {
 		} 
 		
 		close();
+		return null;
 	}//userInsert()
 	
 	public List<GuestbookVo> guestSelect() {
