@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="guestbook">
+
+	<select id="select" resultType="com.javaex.vo.GuestbookVo">
+		select book_id no,
+		name,
+		pw,
+		content,
+		date
+		from guestbook
+	</select>
+
+	<insert id="insert">
+		insert into guestbook
+		values(null, #{name}, #{pw}, #{content}, now())
+	</insert>
+
+	<delete id="delete" parameterType="com.javaex.vo.GuestbookVo">
+		delete from guestbook
+		where pw = #{pw}
+		and book_id = #{no}
+	</delete>
+
+</mapper>
+

@@ -10,6 +10,10 @@ public class GuestbookVo {
 
 	public GuestbookVo() {
 	}
+	public GuestbookVo(int no, String pw) {
+		this.no = no;
+		this.pw = pw;
+	}
 	public GuestbookVo(String name, String pw, String content) {
 		this.name = name;
 		this.pw = pw;
